@@ -1326,7 +1326,7 @@ function coronaCloudController.resignMatch(matchID, userAlert)
 	local params = "auth_token="..coronaCloudController.authToken
 
 	if (userAlert ~= nil) then
-		params = params.."&user_alert="..userAlert
+		params = params.."&user_alert=" .. _urlencode(userAlert)
 	end 
 
 	local path = "matches/"..matchID.."/resign.json"
@@ -1359,7 +1359,7 @@ function coronaCloudController.addPlayerToMatch(userID, matchID, userAlert)
 	params = params.."&user_id="..userID
 
 	if (userAlert ~= nil) then
-		params = params.."&user_alert="..userAlert
+		params = params.."&user_alert=" .. _urlencode(userAlert)
 	end 
 
 	
@@ -1456,7 +1456,7 @@ function coronaCloudController.submitMove(moveContent, targetGroup, targetUser, 
 
 	-- if userAlert specified then add parameter
 	if (userAlert ~= nil) then
-		params = params.."&user_alert="..userAlert
+		params = params.."&user_alert=" .. _urlencode(userAlert)
 	end
 
 	-- Base64 encode moveContent
@@ -1589,7 +1589,7 @@ function coronaCloudController.acceptChallenge(matchID, userAlert)
 	local params = "auth_token="..coronaCloudController.authToken
 	
 	if (userAlert ~= nil) then
-		params = params.."&user_alert="..userAlert
+		params = params.."&user_alert=" .. _urlencode(userAlert)
 	end 
 
 
@@ -1619,7 +1619,7 @@ function coronaCloudController.declineChallenge(matchID)
 	local params = "auth_token="..coronaCloudController.authToken
 
 	if (userAlert ~= nil) then
-		params = params.."&user_alert="..userAlert
+		params = params.."&user_alert=" .. _urlencode(userAlert)
 	end 
 	
 	local path = "matches/"..matchID.."/reject_request.json"
@@ -1652,7 +1652,7 @@ function coronaCloudController.createRandomChallenge(matchID, matchType, userAle
 	end
 
 	if (userAlert ~= nil) then
-		params = params.."&user_alert="..userAlert
+		params = params.."&user_alert=" .. _urlencode(userAlert)
 	end 
 
 	local path = "matches/random_match_up.json"
@@ -1682,7 +1682,7 @@ function coronaCloudController.nudgeUser(matchID, userAlert, payLoad)
 	local params = "auth_token="..coronaCloudController.authToken
 	
 	if (userAlert ~= nil) then
-		params = params.."&user_alert="..userAlert
+		params = params.."&user_alert=" .. _urlencode(userAlert)
 	end 
 
 	if (payLoad ~= nil) then
