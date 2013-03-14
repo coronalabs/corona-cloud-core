@@ -129,6 +129,8 @@ local function _postCC( path, parameters, networkListener )
 
 	local headers = {}
 	headers[ "Authorization" ] = authHeader
+	-- networking 2.0
+	headers["Content-Type"] = "application/x-www-form-urlencoded"
 	params.headers = headers
 
 	local url = "https://" .. coronaCloudController.CC_URL
@@ -193,7 +195,8 @@ local function _putCC( path, parameters, networkListener )
 
 	local headers = {}
 	headers[ "Authorization" ] = authHeader
-
+	-- network 2.0
+	headers["Content-Type"] = "application/x-www-form-urlencoded"
 	params.headers = headers
 	params.body = putData
 
