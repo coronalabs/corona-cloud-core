@@ -471,7 +471,7 @@ function coronaCloudController.registerDevice(deviceToken)
 	local curDevice = system.getInfo("model")
 	local platform
 
-	if curDevice == "iPhone" or "iPad" then
+	if curDevice == "iPhone" or curDevice == "iPad" or curDevice == "iPod" then
 		if coronaCloudController.debugEnabled then
 			print(coronaCloudController.debugTextPrefix .. "Current Device is: "..curDevice)
 		end
