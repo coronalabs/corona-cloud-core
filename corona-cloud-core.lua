@@ -1642,7 +1642,7 @@ function coronaCloudController.declineChallenge(matchID)
 		end
 	end
 
-	_postCC(path, params, networkListener)
+	_deleteCC(path, params, networkListener)
 end
 
 -------------------------------------------------
