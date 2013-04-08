@@ -684,33 +684,6 @@ end
 
 -------------------------------------------------
 
-function coronaCloudController.getStatusOfAchievement(achievementID)
-	local params = "auth_token="..coronaCloudController.authToken
-
-	local path = "achievements/"..achievementID..".json"
-
-	-- set currentUser when it gets it
-	local  function networkListener(event)
-		if (event.isError) then
-			if coronaCloudController.debugEnabled then
-				print(coronaCloudController.debugTextPrefix .. "Network Error")
-				print(coronaCloudController.debugTextPrefix .. "Error: "..event.response)
-			end
-			return false
-		else
-			if coronaCloudController.debugEnabled then
-				print(coronaCloudController.debugTextPrefix .. "Achievement: "..event.response)
-			end
-			local response = json.decode(event.response)
-			Runtime:dispatchEvent({name="Achievements", type="AchievementStatus", results=response})
-		end
-	end
-
-	_getCC(path, params, networkListener)
-end
-
--------------------------------------------------
-
 function coronaCloudController.getMyUnlockedAchievements()
 	local params = "auth_token="..coronaCloudController.authToken
 
