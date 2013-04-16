@@ -517,7 +517,7 @@ function coronaCloudController.registerUser(firstName, lastName, username, email
 	params = params.."&username="..username
 	params = params.."&first_name="..firstName
 	params = params.."&last_name="..lastName
-	params = params.."&email="..email
+	params = params.."&email=".._urlencode(email)
 	params = params.."&password="..password
 
 	local path = "users.json"
