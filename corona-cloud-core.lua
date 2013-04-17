@@ -277,7 +277,7 @@ end
 -------------------------------------------------
 
 function coronaCloudController.loginAPI(username, password, delegate)
-	local params = "login="..username.."&password="..password
+	local params = "login=".._urlencode(username).."&password="..password
 
 	local path = "user_sessions/user_login.json"
 
@@ -546,7 +546,7 @@ end
 -------------------------------------------------
 
 function coronaCloudController.recoverPassword(email)
-	local params = "email="..email
+	local params = "email=".._urlencode(email)
 
 	local path = "users/forgot.json"
 
