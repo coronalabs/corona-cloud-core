@@ -714,7 +714,7 @@ end
 function coronaCloudController.unlockAchievement(achievementID, progress)
 	local params = "auth_token="..coronaCloudController.authToken
 	if progress ~= nil then 
-		params = param.."&progress="..progress
+		params = params.."&progress="..progress
 	end
 
 	local path = "achievements/unlock/"..achievementID..".json"
